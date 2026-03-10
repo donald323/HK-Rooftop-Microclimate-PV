@@ -19,21 +19,21 @@ The pipeline integrates three primary data sources:
 High-frequency on-site sensor measurements from PVIGR experimental stations capturing local environmental conditions beneath and around PV panels. Includes air temperature, relative humidity, wind speed/direction, solar irradiance, and soil moisture at multiple heights and locations.
 
 **Characteristics:**
-- **Temporal Resolution:** Variable (typically 1-5 minute intervals)
+- **Temporal Resolution:** 1 or 5 minutes
 - **Data Format:** Excel (.xlsx) and text (.txt) files from multiple sensor stations
 
 ### 2. PV Power Data
 Solar panel power generation measurements from multiple PV installations with various orientations, tilt angles, and vegetation types (PVIGR systems).
 
 **Characteristics:**
-- **Temporal Resolution:** Variable (typically minute-level)
+- **Temporal Resolution:** 5 minutes
 - **Data Format:** CSV files from SolarEdge monitoring system
 
 ### 3. Weather Station Data
 Hourly meteorological observations from the HKUST Automated Weather Station providing broader atmospheric context and regional weather conditions.
 
 **Characteristics:**
-- **Temporal Resolution:** Hourly
+- **Temporal Resolution:** 1 hour
 - **Data Format:** CSV files with Date/Time columns
 - **Source:** HKUST Automated Weather Station
 - **Variables:**
