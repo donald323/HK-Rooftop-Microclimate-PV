@@ -1,6 +1,6 @@
 # High temporal-resolution microclimate and photovoltaic power dataset for sustainable rooftop design in subtropical humid city
 
-This repository is dedicated for the files related to the pipeline of processing the microclimate and PV power generation data for different roof designs, and weather data at The Hong Kong University of Science and Technology.
+This repository is dedicated for the files related to the pipeline of processing the microclimate and PV power generation data for different roof designs, and weather data at The Hong Kong University of Science and Technology (HKUST).
 
 ## Overview
 
@@ -151,7 +151,7 @@ jupyter notebook notebooks/00_main_pipeline.ipynb
   - `nrPVIGRN` - Near PVIGRN station
   - `nrSed` - Near PVIGR-Sedum
   - `nrZoy` - Near PVIGR-Zoysia
-  - `Lift2` - Near Lift 2
+  - `Lift2` - Near Lift 2 at HKUST
 - **PVAz[###]**: Panel azimuth (azimuth angle in degrees, 0-360°)
 - **PVTilt[##]**: Panel tilt angle (degrees from horizontal, 0-90°)
 - **Hgt[###]**: Installation height (centimeters above ground)
