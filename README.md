@@ -152,7 +152,7 @@ jupyter notebook notebooks/00_main_pipeline.ipynb
   - `nrSed` - Near PVIGR-Sedum
   - `nrZoy` - Near PVIGR-Zoysia
   - `Lift2` - Near Lift 2
-- **PVAz[###]**: Panel orientation (azimuth angle in degrees, 0-360°)
+- **PVAz[###]**: Panel azimuth (azimuth angle in degrees, 0-360°)
 - **PVTilt[##]**: Panel tilt angle (degrees from horizontal, 0-90°)
 - **Hgt[###]**: Installation height (centimeters above ground)
 - **Notes**: Optional descriptors (PV systems only)
@@ -162,9 +162,9 @@ jupyter notebook notebooks/00_main_pipeline.ipynb
   - `Shd` - Relatively more shading
 
 **Examples:**
-- `PV_PVR_1_PVAz242_PVTilt10_Hgt096_SenTree` - PV panel at PVR_1 site, 242° orientation, 10° tilt, 96cm height, with sensor tree
-- `PV_nrSed_PVAz179_PVTilt22_Hgt092_Land_Shd` - PV panel near Sedum, 179° orientation, 22° tilt, 92cm height, landscape layout with more shading
-- `WT_PVAz180_PVTilt22_Hgt060` - Wedelia Trilobata PVIGR, 180° orientation, 22° tilt, 60cm height
+- `PV_PVR_1_PVAz242_PVTilt10_Hgt096_SenTree` - PV panel at PVR_1 site, 242° azimuth, 10° tilt, 96cm height, with sensor tree
+- `PV_nrSed_PVAz179_PVTilt22_Hgt092_Land_Shd` - PV panel near Sedum, 179° azimuth, 22° tilt, 92cm height, landscape layout with more shading
+- `WT_PVAz180_PVTilt22_Hgt060` - Wedelia Trilobata PVIGR, 180° azimuth, 22° tilt, 60cm height
 
 ### Weather Station Column Naming Convention
 
