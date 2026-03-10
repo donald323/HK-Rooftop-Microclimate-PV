@@ -1,0 +1,37 @@
+{
+  "description": "Configuration for detecting constant values indicating sensor failures",
+  "enabled": true,
+  "window_days": 1,
+  "tolerance": 1e-6,
+  "applies_to": {
+    "temperature": {
+      "patterns": ["Temp", "TC", "Air_Temp_C"],
+      "enabled": true
+    },
+    "humidity": {
+      "patterns": ["Humi_", "RelativeHumidity"],
+      "enabled": true,
+      "window_days": 7
+    },
+    "wind": {
+      "patterns": ["Met_", "WindSpeed", "WindDirection"],
+      "enabled": true
+    },
+    "power": {
+      "patterns": ["Optimizer"],
+      "enabled": true
+    },
+    "radiation": {
+      "patterns": ["Pyranometer", "GHI"],
+      "enabled": true
+    },
+    "pressure": {
+      "patterns": ["Pressure"],
+      "enabled": true
+    },
+    "visibility": {
+      "patterns": ["Visibility"],
+      "enabled": true
+    }
+  }
+}

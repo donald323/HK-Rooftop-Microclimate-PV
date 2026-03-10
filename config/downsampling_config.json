@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "description": "Resampling configuration for converting data to uniform temporal resolution",
+  "input_directory": "../data/quality_controlled",
+  "output_directory": "../data/downsampled",
+  "settings": {
+    "frequency": "1h",
+    "description": "1-hour resampling for standard meteorological analysis"
+  }
+}

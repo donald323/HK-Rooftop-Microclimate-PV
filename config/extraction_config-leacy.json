@@ -1,0 +1,383 @@
+{
+  "description": "Data extraction configuration for creating analysis-ready datasets",
+  "input_directory": "../data/downsampled",
+  "interpolated_directory": "../data/interpolated", 
+  "output_directory": "../data/extracted",
+  "settings": {
+    "date_range": {
+      "start_date": "2024-04-01",
+      "end_date": "2025-10-01",
+      "description": "Default date range for data extraction",
+      "format": "YYYY-MM-DD"
+    },
+    "output_options": {
+      "include_metadata": true,
+      "preserve_Azginal_columns": false,
+      "timestamp_column": "DateTime"
+    }
+  },
+  "power": {
+    "description": "Extract power data from all optimizer channels",
+    "files": [
+      {
+        "input": "power/power_merged.csv",
+        "output": "power/PV_Power.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Optimizer 2.2.20- Production - Power (W)": "PV_PVR_1_Az243_Ang10_Hgt096",
+          "Optimizer 2.2.21- Production - Power (W)": "PV_PVR_1_Az242_Ang10_Hgt096_SenTree",
+          "Optimizer 2.2.13- Production - Power (W)": "PV_PVR_1_Az60_Ang10_Hgt096",
+          "Optimizer 2.2.12- Production - Power (W)": "PV_PVR_1_Az66_Ang10_Hgt096",
+          "Optimizer 2.4.14- Production - Power (W)": "PV_nrWT_1_Az170_Ang10_Hgt095",
+          "Optimizer 2.4.15- Production - Power (W)": "PV_nrWT_1_Az171_Ang10_Hgt095",
+          "Optimizer 2.4.16- Production - Power (W)": "PV_nrWT_1_Az352_Ang10_Hgt095",
+          "Optimizer 2.4.17- Production - Power (W)": "PV_nrWT_1_Az351_Ang10_Hgt095",
+          "Optimizer 2.4.22- Production - Power (W)": "PV_nrWT_1_Az172_Ang10_Hgt095",
+          "Optimizer 2.5.8- Production - Power (W)": "PV_nrSed_Az179_Ang22_Hgt092_Land_Shd",
+          "Optimizer 2.5.9- Production - Power (W)": "PV_nrSed_Az180_Ang22_Hgt092_Land",
+          "Optimizer 2.5.21- Production - Power (W)": "PV_nrZoy_Az181_Ang22_Hgt092_Land",
+          "Optimizer 2.5.22- Production - Power (W)": "PV_nrZoy_Az182_Ang22_Hgt092_Land_Shd",
+          "Optimizer 2.5.14- Production - Power (W)": "PV_nrSed_Az180_Ang10_Hgt094_Vert",
+          "Optimizer 2.5.15- Production - Power (W)": "PV_nrSed_Az181_Ang10_Hgt094_Vert",
+          "Optimizer 2.5.16- Production - Power (W)": "PV_nrZoy_Az182_Ang10_Hgt094_Vert",
+          "Optimizer 2.5.17- Production - Power (W)": "PV_nrZoy_Az183_Ang10_Hgt094_Vert",
+          "Optimizer 1.8.1- Production - Power (W)": "PV_Lift2_Az319_Ang1_Hgt083",
+          "Optimizer 1.8.2- Production - Power (W)": "PV_Lift2_Az320_Ang1_Hgt083",
+          "Optimizer 3.2.1- Production - Power (W)": "WT_Az180_Ang22_Hgt060",
+          "Optimizer 3.2.2- Production - Power (W)": "WT_Az180_Ang3_Hgt090",
+          "Optimizer 3.2.3- Production - Power (W)": "WT_Az180_Ang3_Hgt060",
+          "Optimizer 3.2.4- Production - Power (W)": "WT_Az180_Ang12_Hgt060",
+          "Optimizer 2.6.15- Production - Power (W)": "WT_Az180_Ang12_Hgt090",
+          "Optimizer 2.6.16- Production - Power (W)": "WT_Az180_Ang22_Hgt090",
+          "Optimizer 2.6.17- Production - Power (W)": "WT_Az180_Ang22_Hgt075",
+          "Optimizer 2.6.18- Production - Power (W)": "WT_Az180_Ang12_Hgt075",
+          "Optimizer 2.5.10- Production - Power (W)": "Sed_Az180_Ang22_Hgt060",
+          "Optimizer 2.5.11- Production - Power (W)": "Sed_Az180_Ang22_Hgt090",
+          "Optimizer 2.5.19- Production - Power (W)": "Zoy_Az180_Ang22_Hgt060",
+          "Optimizer 2.5.20- Production - Power (W)": "Zoy_Az180_Ang22_Hgt090"
+        }
+      }
+    ]
+  },
+  "weather": {
+    "description": "Extract weather data (temperature, humidity, wind, irradiance)",
+    "files": [
+      {
+        "input": "weather/Lib_GR.csv",
+        "output": "weather/GR.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp2": "Ta_180cm",
+          "Temp1": "Ta_050cm",
+          "Humi2": "RH_180cm",
+          "Humi1": "RH_050cm",
+          "Met_Speed1": "Ws_200cm",
+          "Met_Dir1": "Wdir_200cm"
+        }
+      },
+      {
+        "input": "weather/PV_Lift3.csv",
+        "output": "weather/PVR_2.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp1": "Ta_180cm",
+          "Temp2": "Ta_050cm",
+          "Humi1": "RH_180cm",
+          "Humi2": "RH_050cm",
+          "Met_Speed1": "Ws_200cm",
+          "Met_Dir1": "Wdir_200cm",
+          "Met_Speed2": "Ws_050cm",
+          "Met_Dir2": "Wdir_050cm"
+        }
+      },
+      {
+        "input": "weather/dev9010C231200001.csv",
+        "output": "weather/PVIGR_Zoysia.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Humi_1 []": "RH_180cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm",
+          "Met_Speed_1 []": "Ws_200cm_PVHgt_090cm",
+          "Met_Dir_1 []": "Wdir_200cm_PVHgt_090cm",
+          "Met_Speed_2 []": "Ws_050cm_PVHgt_090cm",
+          "Met_Dir_2 []": "Wdir_050cm_PVHgt_090cm"
+        },
+        "merge_from": {
+          "input": "weather/dev9010E231200001.csv",
+          "columns": {
+            "Temp_3 []": "Ta_050cm_PVHgt_090cm",
+            "Humi_3 []": "RH_050cm_PVHgt_090cm"
+          }
+        }
+      },
+      {
+        "input": "weather/dev9010E231200001.csv",
+        "output": "weather/PVIGR_Sedum.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_050cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Humi_1 []": "RH_050cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm"
+        }
+      },
+      {
+        "input": "weather/dev9010D231200001.csv",
+        "output": "weather/BRwithHVAC.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm",
+          "Temp_2 []": "Ta_050cm",
+          "Humi_1 []": "RH_180cm",
+          "Humi_2 []": "RH_050cm",
+          "Met_Speed_1 []": "Ws_200cm",
+          "Met_Dir_1 []": "Wdir_200cm"
+        }
+      },
+      {
+        "input": "weather/dev9010D231200002.csv",
+        "output": "weather/BR.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm",
+          "Temp_2 []": "Ta_050cm",
+          "Humi_1 []": "RH_180cm",
+          "Humi_2 []": "RH_050cm",
+          "Met_Speed_1 []": "Ws_200cm",
+          "Met_Dir_1 []": "Wdir_200cm"
+        }
+      },
+      {
+        "input": "weather/dev9010b231200001.csv",
+        "output": "weather/PVR_1.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_140cm",
+          "Temp_2 []": "Ta_040cm",
+          "Humi_1 []": "RH_140cm",
+          "Humi_2 []": "RH_040cm",
+          "Met_Speed_1 []": "Ws_200cm",
+          "Met_Dir_1 []": "Wdir_200cm",
+          "Met_Speed_2 []": "Ws_040cm",
+          "Met_Dir_2 []": "Wdir_040cm"
+        }
+      },
+      {
+        "input": "weather/dev9010b231200001.csv",
+        "output": "weather/PVIGR_WedTri_22deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm_PVHgt_060cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Temp_3 []": "Ta_050cm_PVHgt_090cm",
+          "Humi_1 []": "RH_180cm_PVHgt_060cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm",
+          "Humi_3 []": "RH_050cm_PVHgt_090cm",
+          "Met_Dir_1 []": "Wdir_200cm_PVHgt_060cm",
+          "Met_Dir_2 []": "Wdir_050cm_PVHgt_060cm",
+          "Met_Speed_1 []": "Ws_200cm_PVHgt_060cm",
+          "Met_Speed_2 []": "Ws_050cm_PVHgt_060cm"
+        },
+        "merge_from": {
+          "input": "weather/dev9010F240100001.csv",
+          "columns": {
+            "Temp_3 []": "Ta_050cm_PVHgt_075cm",
+            "Humi_3 []": "RH_050cm_PVHgt_075cm"
+          }
+        }
+      },
+      {
+        "input": "weather/dev9010F240100001.csv",
+        "output": "weather/PVIGR_WedTri_12deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_050cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_075cm",
+          "Humi_1 []": "RH_050cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_075cm"
+        },
+        "merge_from": {
+          "input": "weather/dev9010F240100002.csv",
+          "columns": {
+            "Temp_3 []": "Ta_050cm_PVHgt_060cm",
+            "Humi_3 []": "RH_050cm_PVHgt_060cm"
+          }
+        }
+      },
+      {
+        "input": "weather/dev9010F240100002.csv",
+        "output": "weather/PVIGR_WedTri_3deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_050cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Humi_1 []": "RH_050cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm"
+        }
+      },
+      {
+        "input": "weather/dev9010F240100001.csv",
+        "output": "weather/PVIGR_Rad.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Pyranometer1_Sensor1 []": "Rad_22deg"
+        },
+        "merge_from": {
+          "input": "weather/dev9010F240100002.csv",
+          "columns": {
+            "Pyranometer1_Sensor1 []": "Rad_3deg"
+          }
+        }
+      }
+    ]
+  },
+  "soil_moisture": {
+    "description": "Extract soil moisture data from three sensors",
+    "files": [
+      {
+        "input": "weather/dev9010E231200001.csv",
+        "output": "soil moisture/PVIGR_SoilMoisture.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "SoilMoisture_1 []": "SM_Sedum_PVHgt_060cm",
+          "SoilMoisture_2 []": "SM_Zoysia_PVHgt_090cm"
+        },
+        "merge_from": {
+          "input": "weather/dev9010F240100002.csv",
+          "columns": {
+            "SoilMoisture []": "SM_WedTri_PVHgt_060cm"
+          }
+        }
+      }
+    ]
+  },
+  "surface_temp": {
+    "description": "Extract surface temperature (thermocouple) data",
+    "files": [
+      {
+        "input": "weather/Lib_GR.csv",
+        "output": "surface temperature/GR.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC_Temp1": "Tsoil1",
+          "TC_Temp2": "Tsoil2",
+          "TC_Temp3": "Tsoil3"
+        }
+      },
+      {
+        "input": "weather/PV_Lift3.csv",
+        "output": "surface temperature/PVR_2.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC_Temp1": "TR",
+          "TC_Temp2": "TPV_b",
+          "TC_Temp3": "TPV_a"
+        }
+      },
+      {
+        "input": "weather/dev9010C231200001.csv",
+        "output": "surface temperature/PVIGR_Zoysia.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC1_Temp []": "TPV_a_PVHgt_090cm",
+          "TC2_Temp []": "Tsoil_PVHgt_090cm",
+          "TC3_Temp []": "TPV_a_PVHgt_060cm",
+          "TC4_Temp []": "TPV_b_PVHgt_060cm"
+        },
+        "merge_from": {
+          "input": "weather/dev9010E231200001.csv",
+          "columns": {
+            "TC1_Temp []": "TPV_b_PVHgt_090cm"
+          }
+        }
+      },
+      {
+        "input": "weather/dev9010E231200001.csv",
+        "output": "surface temperature/PVIGR_Sedum.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC2_Temp []": "TPV_a_PVHgt_090cm",
+          "TC4_Temp []": "TPV_b_PVHgt_090cm",
+          "TC5_Temp []": "TPV_a_PVHgt_060cm",
+          "TC6_Temp []": "TPV_b_PVHgt_060cm"
+        }
+      },
+      {
+        "input": "weather/dev9010D231200001.csv",
+        "output": "surface temperature/BRwithHVAC.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "TR"
+        }
+      },
+      {
+        "input": "weather/dev9010b231200001.csv",
+        "output": "surface temperature/PVIGR_WedTri_22deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC1_Temp []": "TPV_a_PVHgt_060cm",
+          "TC2_Temp []": "TPV_b_PVHgt_060cm",
+          "TC3_Temp []": "Tsoil_PVHgt_060cm"
+        },
+        "merge_from": {
+          "input": "weather/dev9010F240100001.csv",
+          "columns": {
+            "TC1_Temp []": "TPV_a_PVHgt_090cm",
+            "TC2_Temp []": "TPV_b_PVHgt_090cm",
+            "TC6_Temp []": "TPV_a_PVHgt_075cm",
+            "TC7_Temp []": "TPV_b_PVHgt_075cm"
+          }
+        }
+      },
+      {
+        "input": "weather/dev9010F240100001.csv",
+        "output": "surface temperature/PVIGR_WedTri_12deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC3_Temp []": "TPV_a_PVHgt_090cm",
+          "TC4_Temp []": "TPV_a_PVHgt_075cm",
+          "TC5_Temp []": "TPV_b_PVHgt_075cm"
+        },
+        "merge_from": [
+          {
+            "input": "weather/dev9010F240100002.csv",
+            "columns": {
+              "TC6_Temp []": "TPV_a_PVHgt_060cm",
+              "TC7_Temp []": "TPV_b_PVHgt_060cm"
+            }
+          },
+          {
+            "input": "weather/dev9010b231200001.csv",
+            "columns": {
+              "TC4_Temp []": "TPV_b_PVHgt_090cm"
+            }
+          }
+        ]
+      },
+      {
+        "input": "weather/dev9010F240100002.csv",
+        "output": "surface temperature/PVIGR_WedTri_3deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC1_Temp []": "TR_White",
+          "TC2_Temp []": "TPV_a_PVHgt_090cm",
+          "TC3_Temp []": "TPV_b_PVHgt_090cm",
+          "TC4_Temp []": "TPV_a_PVHgt_060cm",
+          "TC5_Temp []": "TPV_b_PVHgt_060cm"
+        }
+      },
+      {
+        "input": "weather/dev9010C231200002.csv",
+        "output": "surface temperature/PVR_1.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "TC1_Temp []": "TPV_a",
+          "TC2_Temp []": "TPV_b",
+          "TC3_Temp []": "TR"
+        }
+      }
+    ]
+  }
+}

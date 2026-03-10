@@ -1,0 +1,25 @@
+{
+  "description": "Known sensor failure periods for quality control",
+  "last_updated": "2026-03-06",
+  "sensor_failures": {
+    
+    "microclimate/dev9010D231200001.csv": {
+      "description": "Tower C bare roof sensor failures (merged file)",
+      "start": "2024-07-28",
+      "end": "2024-10-16",
+      "sensors": ["Humi_", "Met_", "TC","Temp_"],
+      "reason": "Equipment malfunction during maintenance period",
+      "affected_variables": ["Air temperature", "Relative humidity", "Wind Speed and Direction"]
+    },
+    
+    "microclimate/dev9010D231200002.csv": {
+      "description": "Library Bare Roof sensor failures (merged file)",
+      "start": "2024-07-31", 
+      "end": "2025-02-10",
+      "sensors": ["Temp_", "Humi_", "TC_", "Met_"],
+      "reason": "Sensor calibration issues and equipment replacement",
+      "affected_variables": ["Air temperature", "Relative humidity", "Thermocouple Reading", "Wind Speed and Direction"]
+    }
+    
+  }
+}

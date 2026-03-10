@@ -1,0 +1,171 @@
+{
+  "microclimate": {
+    "temperature": {
+      "description": "Air temperature and surface temperature (soil, roof, PV)",
+      "unit": "C",
+      "lower_bound": 0,
+      "upper_bound": 60,
+      "applies_to": [
+        "Temp",
+        "TC_Temp"
+      ]
+    },
+    "relative_humidity": {
+      "description": "Relative humidity",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "applies_to": [
+        "Humi"
+      ]
+    },
+    "wind_speed": {
+      "description": "Wind speed",
+      "unit": "m/s",
+      "lower_bound": 0,
+      "upper_bound": 70,
+      "applies_to": [
+        "Met_Speed"
+      ]
+    },
+    "wind_direction": {
+      "description": "Wind direction",
+      "unit": "degrees",
+      "lower_bound": 0,
+      "upper_bound": 360,
+      "applies_to": [
+        "Met_Dir"
+      ]
+    },
+    "solar_irradiance": {
+      "description": "Solar irradiance with time-dependent nighttime control",
+      "unit": "W/m²",
+      "lower_bound": 0,
+      "upper_bound": 1600,
+      "applies_to": [
+        "Pyranometer1_Sensor"
+      ],
+      "time_dependent": {
+        "enabled": true,
+        "daytime": {
+          "hours": [7, 17],
+          "lower_bound": 10,
+          "description": "Daylight hours (7:00-17:59): allow full range including heavily cloudy days"
+        },
+        "nighttime": {
+          "lower_bound": 0,
+          "description": "Night hours and early morning/evening: allow zero irradiance"
+        }
+      }
+    },
+    "soil_moisture": {
+      "description": "Soil moisture content",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "applies_to": [
+        "SoilMoisture"
+      ]
+    }
+  },
+  "power": {
+    "pv_power": {
+      "description": "Photovoltaic power generation with time-dependent lower bounds",
+      "unit": "W",
+      "lower_bound": 0,
+      "upper_bound": 1000,
+      "applies_to": [
+        "Optimizer"
+      ],
+      "time_dependent": {
+        "enabled": true,
+        "daytime": {
+          "hours": [7, 17],
+          "lower_bound": 1,
+          "description": "Daytime hours (7:00-17:59) when solar generation should be active"
+        },
+        "nighttime": {
+          "lower_bound": 0,
+          "description": "Nighttime and early morning/evening when zero power is acceptable"
+        }
+      }
+    }
+  },
+  "weather": {
+    "air_temperature": {
+      "description": "USTAWS air temperature",
+      "unit": "C",
+      "lower_bound": 0,
+      "upper_bound": 60,
+      "applies_to": [
+        "Air_Temp_C"
+      ]
+    },
+    "ghi": {
+      "description": "Global Horizontal Irradiance from weather station",
+      "unit": "W/m²",
+      "lower_bound": 0,
+      "upper_bound": 1600,
+      "applies_to": [
+        "GHI_Wm2"
+      ],
+      "time_dependent": {
+        "enabled": true,
+        "daytime": {
+          "hours": [7, 17],
+          "lower_bound": 10,
+          "description": "Daylight hours (7:00-17:59): allow full range including heavily cloudy days"
+        },
+        "nighttime": {
+          "lower_bound": 0,
+          "description": "Night hours and early morning/evening: allow zero irradiance"
+        }
+      }
+    },
+    "pressure": {
+      "description": "Atmospheric pressure from weather station",
+      "unit": "Pa",
+      "lower_bound": 50000,
+      "upper_bound": 110000,
+      "applies_to": [
+        "Pressure_Pa"
+      ]
+    },
+    "relative_humidity": {
+      "description": "Relative humidity from weather station",
+      "unit": "%",
+      "lower_bound": 0,
+      "upper_bound": 100,
+      "applies_to": [
+        "RelativeHumidity_pct"
+      ]
+    },
+    "visibility": {
+      "description": "Visibility from weather station",
+      "unit": "m",
+      "lower_bound": 6,
+      "upper_bound": 80000,
+      "applies_to": [
+        "Visibility_m"
+      ]
+    },
+    "wind_speed": {
+      "description": "Wind speed from weather station",
+      "unit": "m/s",
+      "lower_bound": 0,
+      "upper_bound": 70,
+      "applies_to": [
+        "WindSpeed_ms"
+      ]
+    },
+    "wind_direction": {
+      "description": "Wind direction from weather station",
+      "unit": "degrees",
+      "lower_bound": 0,
+      "upper_bound": 360,
+      "applies_to": [
+        "WindDirection_deg"
+      ]
+    }
+  }
+}

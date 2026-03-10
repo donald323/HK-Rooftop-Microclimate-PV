@@ -1,2 +1,30 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Jupyter Notebooks - treat as binary for merging
+*.ipynb diff=jupyternotebook
+*.ipynb merge=jupyternotebook
+
+# Python files
+*.py text eol=lf
+
+# JSON configuration files
+*.json text eol=lf
+
+# Markdown files
+*.md text eol=lf
+
+# CSV data files (use LF even on Windows for consistency)
+*.csv text eol=lf
+
+# Excel files (binary)
+*.xlsx binary
+*.xls binary
+
+# YAML files
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Documentation
+*.txt text eol=lf
+*.rst text eol=lf

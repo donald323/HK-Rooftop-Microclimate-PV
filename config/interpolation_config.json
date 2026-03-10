@@ -1,0 +1,99 @@
+{
+  "enabled": true,
+  "description": "Optional data interpolation for filling small gaps in time series",
+  "warning": "Interpolation generates synthetic data. Use with caution for research applications.",
+  "input_directory": "../data/downsampled",
+  "output_directory": "../data/interpolated",
+  "settings": {
+    "max_gap_minutes": 60,
+    "mark_interpolated": true,
+    "create_separate_outputs": true,
+    "description": "Default settings for gap-filling based on 1-hour resampling frequency"
+  },
+  "data_types": {
+    "temperature": {
+      "enabled": true,
+      "method": "linear",
+      "description": "Air temperature, soil temperature, surface temperatures",
+      "applies_to": [
+        "Temp",
+        "TC",
+        "Air_Temp"
+      ]
+    },
+    "humidity": {
+      "enabled": true,
+      "method": "linear", 
+      "description": "Relative humidity",
+      "applies_to": [
+        "Humi",
+        "RelativeHumidity",
+        "RH_pct"
+      ]
+    },
+    "soil_moisture": {
+      "enabled": true,
+      "method": "linear", 
+      "description": "Soil Moisture",
+      "applies_to": [
+        "SoilMoisture"
+      ]
+    },    
+    "solar_irradiance": {
+      "enabled": false,
+      "method": "linear",
+      "description": "Solar irradiance",
+      "applies_to": [
+        "Pyranometer",
+        "GHI",
+        "Rad"
+      ]
+    },
+    "wind_speed": {
+      "enabled": false,
+      "method": "linear",
+      "description": "Wind speed",
+      "applies_to": [
+        "Met_Speed",
+        "WindSpeed",
+        "WS_ms",
+        "Ws_"
+      ]
+    },
+    "wind_direction": {
+      "enabled": false,
+      "method": "linear",
+      "description": "Wind direction",
+      "applies_to": [
+        "Met_Dir",
+        "WindDirection",
+        "WDir",
+        "Wdir"
+      ]
+    },
+    "pressure": {
+      "enabled": false,
+      "method": "linear",
+      "description": "Atmospheric pressure",
+      "applies_to": [
+        "Pressure"
+      ]
+    },
+    "visibility": {
+      "enabled": false,
+      "method": "linear",
+      "description": "Visibility",
+      "applies_to": [
+        "Visibility"
+      ]
+    },
+    "power": {
+      "enabled": false,
+      "method": "linear",
+      "description": "Power generation data",
+      "applies_to": [
+        "Optimizer"
+      ]
+    }
+  }
+}

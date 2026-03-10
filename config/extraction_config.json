@@ -1,0 +1,259 @@
+{
+  "description": "Data extraction configuration for creating analysis-ready datasets",
+  "input_directory": "../data/downsampled",
+  "interpolated_directory": "../data/interpolated", 
+  "output_directory": "../data/extracted",
+  "settings": {
+    "date_range": {
+      "start_date": "2024-04-01",
+      "end_date": "2025-10-01",
+      "description": "Default date range for data extraction",
+      "format": "YYYY-MM-DD"
+    },
+    "output_options": {
+      "include_metadata": true,
+      "preserve_Azginal_columns": false,
+      "timestamp_column": "DateTime"
+    }
+  },
+  "power": {
+    "description": "Extract power data from all optimizer channels",
+    "files": [
+      {
+        "input": "power/power_merged.csv",
+        "output": "power/PV_Power.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Optimizer 2.2.20- Production - Power (W)": "PV_PVR_PVAz243_PVTilt10_Hgt096",
+          "Optimizer 2.2.21- Production - Power (W)": "PV_PVR_PVAz242_PVTilt10_Hgt096_SenTree",
+          "Optimizer 2.2.13- Production - Power (W)": "PV_PVR_PVAz60_PVTilt10_Hgt096",
+          "Optimizer 2.2.12- Production - Power (W)": "PV_PVR_PVAz66_PVTilt10_Hgt096",
+          "Optimizer 2.4.14- Production - Power (W)": "PV_nrWT_PVAz170_PVTilt10_Hgt095",
+          "Optimizer 2.4.15- Production - Power (W)": "PV_nrWT_PVAz171_PVTilt10_Hgt095",
+          "Optimizer 2.4.16- Production - Power (W)": "PV_nrWT_PVAz352_PVTilt10_Hgt095",
+          "Optimizer 2.4.17- Production - Power (W)": "PV_nrWT_PVAz351_PVTilt10_Hgt095",
+          "Optimizer 2.4.22- Production - Power (W)": "PV_nrWT_PVAz172_PVTilt10_Hgt095",
+          "Optimizer 2.5.8- Production - Power (W)": "PV_nrSed_PVAz179_PVTilt22_Hgt092_Land_Shd",
+          "Optimizer 2.5.9- Production - Power (W)": "PV_nrSed_PVAz180_PVTilt22_Hgt092_Land",
+          "Optimizer 2.5.21- Production - Power (W)": "PV_nrZoy_PVAz181_PVTilt22_Hgt092_Land",
+          "Optimizer 2.5.22- Production - Power (W)": "PV_nrZoy_PVAz182_PVTilt22_Hgt092_Land_Shd",
+          "Optimizer 2.5.14- Production - Power (W)": "PV_nrSed_PVAz180_PVTilt10_Hgt094_Vert",
+          "Optimizer 2.5.15- Production - Power (W)": "PV_nrSed_PVAz181_PVTilt10_Hgt094_Vert",
+          "Optimizer 2.5.16- Production - Power (W)": "PV_nrZoy_PVAz182_PVTilt10_Hgt094_Vert",
+          "Optimizer 2.5.17- Production - Power (W)": "PV_nrZoy_PVAz183_PVTilt10_Hgt094_Vert",
+          "Optimizer 1.8.1- Production - Power (W)": "PV_Lift2_PVAz319_PVTilt10_Hgt083",
+          "Optimizer 1.8.2- Production - Power (W)": "PV_Lift2_PVAz320_PVTilt10_Hgt083",
+          "Optimizer 3.2.1- Production - Power (W)": "WT_PVAz180_PVTilt22_Hgt060",
+          "Optimizer 3.2.2- Production - Power (W)": "WT_PVAz180_PVTilt3_Hgt090",
+          "Optimizer 3.2.3- Production - Power (W)": "WT_PVAz180_PVTilt3_Hgt060",
+          "Optimizer 3.2.4- Production - Power (W)": "WT_PVAz180_PVTilt12_Hgt060",
+          "Optimizer 2.6.15- Production - Power (W)": "WT_PVAz180_PVTilt12_Hgt090",
+          "Optimizer 2.6.16- Production - Power (W)": "WT_PVAz180_PVTilt22_Hgt090",
+          "Optimizer 2.6.17- Production - Power (W)": "WT_PVAz180_PVTilt22_Hgt075",
+          "Optimizer 2.6.18- Production - Power (W)": "WT_PVAz180_PVTilt12_Hgt075",
+          "Optimizer 2.5.10- Production - Power (W)": "Sed_PVAz180_PVTilt22_Hgt060",
+          "Optimizer 2.5.11- Production - Power (W)": "Sed_PVAz180_PVTilt22_Hgt090",
+          "Optimizer 2.5.19- Production - Power (W)": "Zoy_PVAz180_PVTilt22_Hgt060",
+          "Optimizer 2.5.20- Production - Power (W)": "Zoy_PVAz180_PVTilt22_Hgt090"
+        }
+      }
+    ]
+  },
+  "microclimate": {
+    "description": "Extract microclimate data (temperature, humidity, wind, irradiance, soil moisture)",
+    "files": [
+      {
+        "input": "microclimate/Lib_GR.csv",
+        "output": "microclimate/GR.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp2": "Ta_180cm",
+          "Temp1": "Ta_050cm",
+          "Humi2": "RH_180cm",
+          "Humi1": "RH_050cm",
+          "Met_Speed1": "Ws_200cm",
+          "Met_Dir1": "Wdir_200cm"
+        }
+      },
+      {
+        "input": "microclimate/PV_Lift3.csv",
+        "output": "microclimate/PVR.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp1": "Ta_180cm",
+          "Temp2": "Ta_050cm",
+          "Humi1": "RH_180cm",
+          "Humi2": "RH_050cm",
+          "Met_Speed1": "Ws_200cm",
+          "Met_Dir1": "Wdir_200cm",
+          "Met_Speed2": "Ws_050cm",
+          "Met_Dir2": "Wdir_050cm"
+        }
+      },
+      {
+        "input": "microclimate/dev9010C231200001.csv",
+        "output": "microclimate/PVIGR_Zoysia.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Humi_1 []": "RH_180cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm",
+          "Met_Speed_1 []": "Ws_200cm_PVHgt_090cm",
+          "Met_Dir_1 []": "Wdir_200cm_PVHgt_090cm",
+          "Met_Speed_2 []": "Ws_050cm_PVHgt_090cm",
+          "Met_Dir_2 []": "Wdir_050cm_PVHgt_090cm"
+        },
+        "merge_from": {
+          "input": "microclimate/dev9010E231200001.csv",
+          "columns": {
+            "Temp_3 []": "Ta_050cm_PVHgt_090cm",
+            "Humi_3 []": "RH_050cm_PVHgt_090cm"
+          }
+        }
+      },
+      {
+        "input": "microclimate/dev9010E231200001.csv",
+        "output": "microclimate/PVIGR_Sedum.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_050cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Humi_1 []": "RH_050cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm"
+        }
+      },
+      {
+        "input": "microclimate/dev9010D231200001.csv",
+        "output": "microclimate/BRwithHVAC.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm",
+          "Temp_2 []": "Ta_050cm",
+          "Humi_1 []": "RH_180cm",
+          "Humi_2 []": "RH_050cm",
+          "Met_Speed_1 []": "Ws_200cm",
+          "Met_Dir_1 []": "Wdir_200cm"
+        }
+      },
+      {
+        "input": "microclimate/dev9010D231200002.csv",
+        "output": "microclimate/BR.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm",
+          "Temp_2 []": "Ta_050cm",
+          "Humi_1 []": "RH_180cm",
+          "Humi_2 []": "RH_050cm",
+          "Met_Speed_1 []": "Ws_200cm",
+          "Met_Dir_1 []": "Wdir_200cm"
+        }
+      },
+      {
+        "input": "microclimate/dev9010b231200001.csv",
+        "output": "microclimate/PVIGR_WedTri_22deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_180cm_PVHgt_060cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Temp_3 []": "Ta_050cm_PVHgt_090cm",
+          "Humi_1 []": "RH_180cm_PVHgt_060cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm",
+          "Humi_3 []": "RH_050cm_PVHgt_090cm",
+          "Met_Dir_1 []": "Wdir_200cm_PVHgt_060cm",
+          "Met_Dir_2 []": "Wdir_050cm_PVHgt_060cm",
+          "Met_Speed_1 []": "Ws_200cm_PVHgt_060cm",
+          "Met_Speed_2 []": "Ws_050cm_PVHgt_060cm"
+        },
+        "merge_from": {
+          "input": "microclimate/dev9010F240100001.csv",
+          "columns": {
+            "Temp_3 []": "Ta_050cm_PVHgt_075cm",
+            "Humi_3 []": "RH_050cm_PVHgt_075cm"
+          }
+        }
+      },
+      {
+        "input": "microclimate/dev9010F240100001.csv",
+        "output": "microclimate/PVIGR_WedTri_12deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_050cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_075cm",
+          "Humi_1 []": "RH_050cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_075cm"
+        },
+        "merge_from": {
+          "input": "microclimate/dev9010F240100002.csv",
+          "columns": {
+            "Temp_3 []": "Ta_050cm_PVHgt_060cm",
+            "Humi_3 []": "RH_050cm_PVHgt_060cm"
+          }
+        }
+      },
+      {
+        "input": "microclimate/dev9010F240100002.csv",
+        "output": "microclimate/PVIGR_WedTri_3deg.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Temp_1 []": "Ta_050cm_PVHgt_090cm",
+          "Temp_2 []": "Ta_050cm_PVHgt_060cm",
+          "Humi_1 []": "RH_050cm_PVHgt_090cm",
+          "Humi_2 []": "RH_050cm_PVHgt_060cm"
+        }
+      },
+      {
+        "input": "microclimate/dev9010F240100001.csv",
+        "output": "microclimate/PVIGR_Rad.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Pyranometer1_Sensor1 []": "Rad_22deg"
+        },
+        "merge_from": {
+          "input": "microclimate/dev9010F240100002.csv",
+          "columns": {
+            "Pyranometer1_Sensor1 []": "Rad_3deg"
+          }
+        }
+      },
+      {
+        "input": "microclimate/dev9010E231200001.csv",
+        "output": "microclimate/PVIGR_SoilMoisture.csv",
+        "date_range": {
+          "start_date": "2024-04-01",
+          "end_date": "2024-08-31"
+        },
+        "columns": {
+          "DateTime": "DateTime",
+          "SoilMoisture_1 []": "SM_Sedum_PVHgt_060cm",
+          "SoilMoisture_2 []": "SM_Zoysia_PVHgt_090cm"
+        },
+        "merge_from": {
+          "input": "microclimate/dev9010F240100002.csv",
+          "columns": {
+            "SoilMoisture []": "SM_WedTri_PVHgt_060cm"
+          }
+        }
+      }
+    ]
+  },
+  "weather": {
+    "description": "Extract USTAWS weather station data",
+    "files": [
+      {
+        "input": "weather/weather_merged.csv",
+        "output": "weather/USTAWS_Weather.csv",
+        "columns": {
+          "DateTime": "DateTime",
+          "Air_Temp_C": "Air_Temp_C",
+          "GHI_Wm2": "GHI_Wm2",
+          "Pressure_Pa": "Pressure_Pa",
+          "RelativeHumidity_pct": "RH_pct",
+          "Visibility_m": "Visibility_m",
+          "WindSpeed_ms": "WS_ms",
+          "WindDirection_deg": "WDir_deg"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+# PVIGR Data Processing Requirements
+# Core dependencies for data processing pipeline
+
+# Data manipulation and analysis
+pandas>=2.0.0,<3.0.0
+numpy>=1.24.0,<2.0.0
+
+# Excel file support
+openpyxl>=3.1.0,<4.0.0
+
+# Configuration management
+jsonschema>=4.20.0,<5.0.0
+python-dotenv>=1.0.0,<2.0.0
+
+# Configuration and utilities
+python-dateutil>=2.8.0,<3.0.0
+
+# Progress bars
+tqdm>=4.65.0,<5.0.0
+
+# Development dependencies (optional, install with: pip install -r requirements-dev.txt)
+# pytest>=7.4.0
+# black>=23.0.0
+# flake8>=6.0.0
+# ruff>=0.1.0
+# mypy>=1.0.0
+# sphinx>=7.0.0
