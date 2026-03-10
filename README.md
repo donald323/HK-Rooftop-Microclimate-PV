@@ -210,7 +210,6 @@ All weather station data follows a standardized format with variable name follow
 │   └── 06_missing_rate_analysis.ipynb  # Stage 6: Data completeness analysis
 ├── raw_data                            # Downloaded and extracted raw data
 ├── src/                                # Source code modules
-│   ├── __init__.py                     # Initialization
 │   ├── downsampling.py                 # Temporal downsampling
 │   ├── exceptions.py                   # Custom exception classes
 │   ├── extract_data.py                 # Dataset extraction
@@ -218,12 +217,9 @@ All weather station data follows a standardized format with variable name follow
 │   ├── logging_config.py               # Logging configuration
 │   ├── merge_data.py                   # Time series merging logic
 │   ├── missing_rate_analysis.py        # Missing rate calculations
-│   ├── notebook_utils.py               # Notebook helper utilities
 │   ├── plot_style.py                   # Visualization styling
 │   ├── quality_control.py              # QC validation engine
 │   └── validation.py                   # Data validatiset extraction
-│   ├── plot_style.py                   # Visualization styling
-│   └── utils.py                        # Common utilities
 ```
 ## Related Publications:
 - [To be Confirmed]
