@@ -1,6 +1,6 @@
-# PVIGR Data Processing
+# High temporal-resolution microclimate and photovoltaic power dataset for sustainable rooftop design in subtropical humid city
 
-This repository is dedicated for the files related to the pipeline of processing the PVIGR power and meteorological data.
+This repository is dedicated for the files related to the pipeline of processing the microclimate and PV power generation data for different roof designs, and weather data at The Hong Kong University of Science and Technology.
 
 ## Overview
 
