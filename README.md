@@ -49,7 +49,7 @@ Hourly meteorological observations from the HKUST Automated Weather Station prov
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+pip install -r "Set up environment.txt"
 ```
 
 ## Usage
