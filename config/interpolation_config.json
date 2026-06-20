@@ -63,7 +63,8 @@
     "wind_direction": {
       "enabled": false,
       "method": "linear",
-      "description": "Wind direction",
+      "circular": true,
+      "description": "Wind direction (circular interpolation, currently disabled)",
       "applies_to": [
         "Met_Dir",
         "WindDirection",
