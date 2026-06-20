@@ -48,9 +48,9 @@ class DataInterpolator:
         interp_mask = original_na & interpolated.notna()
         return interpolated, interp_mask
 
-    def circular_interpolate_column(self, series, limit=None):
+    def angular_interpolate_column(self, series, limit=None):
         """
-        Circular interpolation for angular variables (e.g., wind direction 0-360).
+        Angular interpolation for directional variables (e.g., wind direction 0-360).
         Decomposes into sine/cosine components, interpolates those, then recomputes the angle.
         """
         original_na = series.isna()
@@ -110,10 +110,10 @@ class DataInterpolator:
 
             limit = max_gap if max_gap else None
 
-            # Use circular interpolation for angular variables (e.g., wind direction)
+            # Use angular interpolation for directional variables (e.g., wind direction)
             if is_circular:
-                interpolated, interp_mask = self.circular_interpolate_column(df[column], limit)
-                actual_method = f'circular ({method})'
+                interpolated, interp_mask = self.angular_interpolate_column(df[column], limit)
+                actual_method = f'angular ({method})'
             else:
                 interpolated, interp_mask = self.interpolate_column(df[column], method, limit)
                 actual_method = method
